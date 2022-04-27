@@ -18,14 +18,13 @@ const Playlist = () => {
 			{error && <p>Some error occurred</p>}
 			{data && (
 				<>
-					<h2>{data.name}</h2>
-
 					<p>
 						Playlist ID{' '}
 						<S.ID
 							onClick={(e) => {
 								e.preventDefault();
 								navigator.clipboard.writeText(playlistId);
+								alert('Copied to clipboard');
 							}}
 						>
 							{playlistId}
@@ -35,29 +34,17 @@ const Playlist = () => {
 					<S.TwoCol>
 						<Playback
 							videos={data.videos}
-							index={0}
 							onDeleteRequest={async (id) => {
-								console.log(`Delete request ${id}`);
-
 								const newVideos = data.videos.filter((item) => item !== id);
-
-								const res = await updatePlaylistFetcher(
-									playlistId,
-									data.name,
-									newVideos
-								);
-
-								console.log(JSON.stringify(res, null, 2));
+								await updatePlaylistFetcher(playlistId, data.name, newVideos);
 							}}
 						/>
 						<Search
 							onSelect={async (id) => {
-								const res = await updatePlaylistFetcher(playlistId, data.name, [
+								await updatePlaylistFetcher(playlistId, data.name, [
 									...data.videos,
 									id,
 								]);
-
-								console.log(JSON.stringify(res, null, 2));
 							}}
 						/>
 					</S.TwoCol>

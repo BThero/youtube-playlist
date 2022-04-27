@@ -1,5 +1,5 @@
 import React from 'react';
-import { UL, LI } from './List.styled';
+import { UL, LI, Wrapper } from './List.styled';
 
 const List = ({ data, onSelect }) => {
 	return (
@@ -15,11 +15,10 @@ const List = ({ data, onSelect }) => {
 					<header>
 						<h3>{item.title}</h3>
 					</header>
-					<div>
+					<Wrapper>
 						<span>Duration: {item.duration_raw}</span>
-						<span> </span>
 						<span>Views: {item.views}</span>
-					</div>
+					</Wrapper>
 				</LI>
 			))}
 		</UL>

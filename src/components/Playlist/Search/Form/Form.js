@@ -1,7 +1,7 @@
 import React, { createRef } from 'react';
+import * as S from './Form.styled';
 import Input from 'components/Input';
 import Button from 'components/Button';
-import * as S from './Form.styled';
 
 const Form = ({ onSubmit }) => {
 	const inputRef = createRef();
@@ -13,8 +13,8 @@ const Form = ({ onSubmit }) => {
 				onSubmit(inputRef.current.value);
 			}}
 		>
-			<Input label="Enter new playlist name: " id="playlist" ref={inputRef} />
-			<Button type="submit" text="Create" />
+			<Input ref={inputRef} type="text" label="Search video" />
+			<Button type="submit" text="Search" />
 		</S.Form>
 	);
 };

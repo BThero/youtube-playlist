@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import useSWR from 'swr';
 import { searchFetcher } from '../../../lib/api';
-import SearchForm from './Form';
+import Form from './Form';
 import List from './List';
 
 const Search = ({ onSelect }) => {
@@ -10,7 +10,7 @@ const Search = ({ onSelect }) => {
 
 	return (
 		<div>
-			<SearchForm
+			<Form
 				onSubmit={(text) => {
 					setSearchText(text);
 				}}

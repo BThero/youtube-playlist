@@ -23,4 +23,9 @@ const LI = styled.li`
 	}
 `;
 
-export { UL, LI };
+const Wrapper = styled.div`
+	display: flex;
+	justify-content: space-between;
+`;
+
+export { UL, LI, Wrapper };
