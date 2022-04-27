@@ -15,7 +15,7 @@ const ID = styled.span`
 const TwoCol = styled.div`
 	width: 100%;
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 2fr 1fr;
 `;
 
 export { ID, PlaylistWrapper, TwoCol };

@@ -1,16 +1,24 @@
 import React from 'react';
-import { Div, Video } from './Player.styled';
+import { Div } from './Player.styled';
+import YouTube from 'react-youtube';
 
-const Player = ({ id }) => {
+const opts = {
+	width: 640,
+	height: 480,
+	playerVars: {
+		autoplay: 1,
+	},
+};
+
+const Player = ({ id, onEnd }) => {
 	return (
 		<Div>
-			<Video
-				width="480px"
-				height="360px"
-				title="Youtube player"
-				sandbox="allow-same-origin allow-forms allow-popups allow-scripts allow-presentation"
-				src={`https://youtube.com/embed/${id}?autoplay=1`}
-				allowFullScreen
+			<YouTube
+				videoId={id}
+				width="640px"
+				height="480px"
+				onEnd={onEnd}
+				opts={opts}
 			/>
 		</Div>
 	);

@@ -5,8 +5,4 @@ const Div = styled.div`
 	justify-content: center;
 `;
 
-const Video = styled.iframe`
-	border: none;
-`;
-
-export { Div, Video };
+export { Div };

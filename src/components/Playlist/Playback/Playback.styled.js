@@ -10,7 +10,7 @@ const Wrapper = styled.div`
 const Nav = styled.div`
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: space-around;
 	align-self: stretch;
 	margin-top: 1rem;
 `;

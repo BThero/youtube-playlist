@@ -18,7 +18,14 @@ const Playback = ({ videos, onDeleteRequest }) => {
 			{videos.length === 0 && <p>No videos to display</p>}
 			{videos.length > 0 && (
 				<>
-					<Player id={videos[index]} />
+					<Player
+						id={videos[index]}
+						onEnd={() => {
+							if (index + 1 < videos.length) {
+								setIndex(index + 1);
+							}
+						}}
+					/>
 
 					<S.Nav>
 						<S.Button

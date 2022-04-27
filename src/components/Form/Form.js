@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
-import { Input, Button } from './Form.styled';
+import * as S from './Form.styled';
 
 const Form = ({ onSubmit }) => {
 	const [text, setText] = useState('');
 
 	return (
-		<form
+		<S.Form
 			onSubmit={(e) => {
 				e.preventDefault();
 				onSubmit(text);
 			}}
 		>
 			<label htmlFor="playlist">Enter new playlist name: </label>
-			<Input
+			<S.Input
 				id="playlist"
 				type="text"
 				value={text}
@@ -21,8 +21,8 @@ const Form = ({ onSubmit }) => {
 					setText(e.target.value);
 				}}
 			/>
-			<Button type="submit">Create</Button>
-		</form>
+			<S.Button type="submit">Create</S.Button>
+		</S.Form>
 	);
 };
 
