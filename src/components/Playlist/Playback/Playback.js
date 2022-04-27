@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import Player from './Player';
 import * as S from './Playback.styled';
 import Button from 'components/Button';
+import VideoItem from './VideoItem';
 
-const Playback = ({ videos, onDeleteRequest }) => {
+const Playback = ({ videos, onDeleteRequest, onSwapAdjacent }) => {
 	const [index, setIndex] = useState(0);
 
 	useEffect(() => {
@@ -63,6 +64,40 @@ const Playback = ({ videos, onDeleteRequest }) => {
 							onDeleteRequest(videos[index]);
 						}}
 					/>
+
+					{videos.map((item, idx) => {
+						if (idx > index) {
+							return (
+								<VideoItem
+									idx={idx}
+									id={item}
+									onClick={(e) => {
+										e.preventDefault();
+										onSwapAdjacent(idx);
+									}}
+								/>
+							);
+						} else {
+							return null;
+						}
+					})}
+
+					{videos.map((item, idx) => {
+						if (idx < index) {
+							return (
+								<VideoItem
+									idx={idx}
+									id={item}
+									onClick={(e) => {
+										e.preventDefault();
+										onSwapAdjacent(idx);
+									}}
+								/>
+							);
+						} else {
+							return null;
+						}
+					})}
 				</>
 			)}
 		</S.Wrapper>

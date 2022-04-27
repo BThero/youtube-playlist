@@ -38,6 +38,21 @@ const Playlist = () => {
 								const newVideos = data.videos.filter((item) => item !== id);
 								await updatePlaylistFetcher(playlistId, data.name, newVideos);
 							}}
+							onSwapAdjacent={async (idx) => {
+								if (
+									data.videos.length &&
+									idx >= 0 &&
+									idx < data.videos.length
+								) {
+									const nxt = (idx + 1) % data.videos.length;
+									const newVideos = data.videos.slice();
+									[newVideos[idx], newVideos[nxt]] = [
+										newVideos[nxt],
+										newVideos[idx],
+									];
+									await updatePlaylistFetcher(playlistId, data.name, newVideos);
+								}
+							}}
 						/>
 						<Search
 							onSelect={async (id) => {
