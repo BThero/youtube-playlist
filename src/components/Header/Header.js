@@ -10,7 +10,7 @@ const Header = () => {
 
 	return (
 		<S.Header>
-			<h1>{data ? data.name : 'Youtube playlists'}</h1>
+			<h1>{data?.name ?? 'Youtube playlists'}</h1>
 			<hr />
 		</S.Header>
 	);

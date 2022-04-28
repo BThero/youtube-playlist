@@ -13,13 +13,7 @@ const opts = {
 const Player = ({ id, onEnd }) => {
 	return (
 		<Div>
-			<YouTube
-				videoId={id}
-				width="640px"
-				height="480px"
-				onEnd={onEnd}
-				opts={opts}
-			/>
+			<YouTube videoId={id} onEnd={onEnd} opts={opts} />
 		</Div>
 	);
 };

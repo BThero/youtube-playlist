@@ -7,4 +7,18 @@ const App = styled.div`
 	padding: 1rem;
 `;
 
-export { App };
+const ButtonText = styled.span`
+	color: pink;
+
+	&:hover {
+		color: var(--white);
+		cursor: pointer;
+	}
+`;
+
+const HR = styled.hr`
+	width: 100%;
+	margin-top: 0.5rem;
+`;
+
+export { App, ButtonText, HR };

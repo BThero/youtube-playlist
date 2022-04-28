@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Form = styled.form`
+const NewPlaylistForm = styled.form`
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -8,4 +8,4 @@ const Form = styled.form`
 	margin-top: 1rem;
 `;
 
-export { Form };
+export { NewPlaylistForm };

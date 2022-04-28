@@ -13,7 +13,7 @@ const Form = ({ onSubmit }) => {
 				onSubmit(inputRef.current.value);
 			}}
 		>
-			<Input ref={inputRef} type="text" label="Search video" />
+			<Input ref={inputRef} type="text" label="Search video" id="search" />
 			<Button type="submit" text="Search" />
 		</S.Form>
 	);
