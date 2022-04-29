@@ -12,11 +12,15 @@ const List = ({ data, onSelect }) => {
 						onSelect(item.id.videoId);
 					}}
 				>
-					<Thumbnail src={item.snippet.thumbnails.url} alt="thumbnail" />
-					{/* <pre>{JSON.stringify(item, null, 2)}</pre> */}
+					<Thumbnail
+						src={item?.snippet?.thumbnails?.url ?? null}
+						alt="thumbnail"
+					/>
+
 					<header>
 						<h3>{item.title}</h3>
 					</header>
+
 					<Wrapper>
 						<span>Duration: {item.duration_raw}</span>
 						<span>Views: {item.views}</span>

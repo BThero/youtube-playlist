@@ -1,7 +1,7 @@
 import React from 'react';
 import { Div } from './Player.styled';
 import YouTube from 'react-youtube';
-import useSWR from '../../../../../node_modules/swr/dist/index';
+import useSWR from 'swr';
 import { videoFetcher } from 'lib/api';
 
 const opts = {
