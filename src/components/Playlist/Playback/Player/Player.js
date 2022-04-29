@@ -1,6 +1,8 @@
 import React from 'react';
 import { Div } from './Player.styled';
 import YouTube from 'react-youtube';
+import useSWR from '../../../../../node_modules/swr/dist/index';
+import { videoFetcher } from 'lib/api';
 
 const opts = {
 	width: 640,
@@ -11,9 +13,17 @@ const opts = {
 };
 
 const Player = ({ id, onEnd }) => {
+	const { data } = useSWR(id, videoFetcher);
+
 	return (
 		<Div>
 			<YouTube videoId={id} onEnd={onEnd} opts={opts} />
+			{data && (
+				<>
+					<h2>{data.title}</h2>
+					<p>{data.description}</p>
+				</>
+			)}
 		</Div>
 	);
 };
