@@ -1,7 +1,7 @@
 import React from 'react';
 import VideoItem from './VideoItem/VideoItem';
 
-const Videos = ({ videos, playing, onSwap }) => {
+const Videos = ({ videos, playing, onSwap, onSelect }) => {
 	return (
 		<ul>
 			{videos.map((item, idx) => {
@@ -10,10 +10,8 @@ const Videos = ({ videos, playing, onSwap }) => {
 						<VideoItem
 							idx={idx}
 							id={item}
-							onClick={(e) => {
-								e.preventDefault();
-								onSwap(idx);
-							}}
+							onButtonClick={onSwap}
+							onVideoClick={onSelect}
 						/>
 					);
 				} else {
@@ -27,10 +25,8 @@ const Videos = ({ videos, playing, onSwap }) => {
 						<VideoItem
 							idx={idx}
 							id={item}
-							onClick={(e) => {
-								e.preventDefault();
-								onSwap(idx);
-							}}
+							onButtonClick={onSwap}
+							onVideoClick={onSelect}
 							playedBefore
 						/>
 					);

@@ -11,7 +11,7 @@ const ButtonText = styled.span`
 	color: pink;
 
 	&:hover {
-		color: var(--white);
+		color: #f0dae3;
 		cursor: pointer;
 	}
 `;

@@ -65,7 +65,14 @@ const Playback = ({ videos, onDeleteRequest, onSwap }) => {
 						}}
 					/>
 
-					<Videos videos={videos} playing={index} onSwap={onSwap} />
+					<Videos
+						videos={videos}
+						playing={index}
+						onSwap={onSwap}
+						onSelect={(idx) => {
+							setIndex(idx);
+						}}
+					/>
 				</>
 			)}
 		</S.Wrapper>

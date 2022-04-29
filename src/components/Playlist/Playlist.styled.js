@@ -10,6 +10,10 @@ const PlaylistWrapper = styled.div`
 const ID = styled.span`
 	color: pink;
 	cursor: pointer;
+
+	&:hover {
+		color: #f0dae3;
+	}
 `;
 
 const TwoCol = styled.div`

@@ -10,6 +10,11 @@ const Wrapper = styled.ul`
 const Span = styled.span`
 	color: ${({ playedBefore }) => (playedBefore ? 'darkgray' : null)};
 	margin-left: 1rem;
+
+	&:hover {
+		color: pink;
+		cursor: pointer;
+	}
 `;
 
 export { Wrapper, Span };

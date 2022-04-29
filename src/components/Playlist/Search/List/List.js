@@ -1,5 +1,5 @@
 import React from 'react';
-import { UL, LI, Wrapper } from './List.styled';
+import { UL, LI, Wrapper, Thumbnail } from './List.styled';
 
 const List = ({ data, onSelect }) => {
 	return (
@@ -12,6 +12,8 @@ const List = ({ data, onSelect }) => {
 						onSelect(item.id.videoId);
 					}}
 				>
+					<Thumbnail src={item.snippet.thumbnails.url} alt="thumbnail" />
+					{/* <pre>{JSON.stringify(item, null, 2)}</pre> */}
 					<header>
 						<h3>{item.title}</h3>
 					</header>

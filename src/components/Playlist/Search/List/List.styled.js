@@ -23,9 +23,13 @@ const LI = styled.li`
 	}
 `;
 
+const Thumbnail = styled.img`
+	height: 150px;
+`;
+
 const Wrapper = styled.div`
 	display: flex;
 	justify-content: space-between;
 `;
 
-export { UL, LI, Wrapper };
+export { UL, LI, Wrapper, Thumbnail };
